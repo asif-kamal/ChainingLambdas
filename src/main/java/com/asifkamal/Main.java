@@ -1,6 +1,8 @@
 package com.asifkamal;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -24,5 +26,14 @@ public class Main {
         Consumer<String> s1 = System.out::println;
         Arrays.asList(names).forEach(s0.andThen(s -> System.out.print(" - "))
                 .andThen(s1));
+
+        record Person(String firstName, String lastName, int age) {
+
+        }
+        List<Person> people = new ArrayList<>(Arrays.asList(
+                new Person("John", "Doe", 30),
+                new Person("Jane", "Smith", 25),
+                new Person("Alice", "Johnson", 35)
+        ));
     }
 }
