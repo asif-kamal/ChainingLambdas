@@ -2,6 +2,7 @@ package com.asifkamal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -35,5 +36,7 @@ public class Main {
                 new Person("Jane", "Smith", 25),
                 new Person("Alice", "Johnson", 35)
         ));
+        people.sort(Comparator.comparing(Person::age).reversed());
+        people.forEach(p -> System.out.println(p.firstName() + " " + p.lastName() + " - Age: " + p.age()));
     }
 }
